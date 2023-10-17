@@ -1,0 +1,18 @@
+$navbar-bg: #111;
+$white-foreground: #eee;
+
+main {
+    background: $navbar-bg;
+    color: $white-foreground;
+    height: 100%;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#legendary-div {
+    font-size: 2rem;
+}

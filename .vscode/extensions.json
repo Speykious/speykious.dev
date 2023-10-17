@@ -1,0 +1,12 @@
+{
+	// List of extensions which should be recommended for users of this workspace.
+	"recommendations": [
+		"usernamehw.errorlens",
+		"rust-lang.rust-analyzer",
+		"tamasfe.even-better-toml",
+		"yzhang.markdown-all-in-one",
+		"IronGeek.vscode-env",
+		"svelte.svelte-vscode",
+		"christian-kohler.path-intellisense",
+	],
+}
