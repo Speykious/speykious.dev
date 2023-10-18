@@ -1,18 +1,85 @@
-$navbar-bg: #111;
-$white-foreground: #eee;
+@import 'variables';
 
 main {
     background: $navbar-bg;
-    color: $white-foreground;
+    color: $foreground;
     height: 100%;
 }
 
-.centered {
+figure {
+    margin: 0;
+}
+
+a {
+    color: $foreground;
+
+    &.disabled {
+        pointer-events: none;
+        opacity: 42%;
+    }
+}
+
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    > .main-body {
+        flex-grow: 1;
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+.centered-content {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.chevronned-spey {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: fit-content;
+
+    &.smol {
+        gap: 5px;
+    }
+
+    > * {
+        &.chevron {
+            width: 32px;
+            height: 64px;
+        }
+
+        &.spey-pfp {
+            width: 120px;
+            height: 120px;
+        }
+    }
+
+    > .smol {
+        &.chevron {
+            width: 10px;
+            height: 20px;
+        }
+
+        &.spey-pfp {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+.spey-pfp {
+    border-radius: 100%;
+    border: 2px solid $foreground;
+}
+
 #legendary-div {
     font-size: 2rem;
+    text-align: center;
 }
