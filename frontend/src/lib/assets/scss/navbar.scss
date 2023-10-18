@@ -11,6 +11,15 @@ nav {
     font-weight: 500;
 }
 
+// TODO: make this better. Clearly the navbar needs to be visible on phones.
+@media screen and (max-width: 1050px) {
+    nav {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}
+
 .nav-container {
     display: flex;
     align-items: center;
