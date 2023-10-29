@@ -15,6 +15,6 @@
 	export { className as class };
 </script>
 
-<div on:click={toggleOpen} class={`nav-edge right nav-block kinda-button centered-content ${className}`}>
+<button on:click={toggleOpen} class={`nav-edge right nav-block kinda-button centered-content ${className}`} role="button" aria-pressed="false" tabindex="0">
 	<img class="tab-icon" src={iconMenu} alt="Menu" />
-</div>
+</button>
