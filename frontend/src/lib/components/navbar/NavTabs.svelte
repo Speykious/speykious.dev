@@ -12,7 +12,7 @@
 
 <div class={`nav-tabs nav-container ${className}`}>
 	<NavTab class="active nav-block" href="/" icon={iconHome} title="Home" />
-	<NavTab class="nav-block" href="/projects" icon={iconCodeBlocks} title="Projects" />
-	<NavTab class="nav-block" href="/anime" icon={iconStar} title="Anime" />
-	<NavTab class="nav-block" href="/blog" icon={iconArticle} title="Blog" />
+	<NavTab class="disabled nav-block" href="/projects" icon={iconCodeBlocks} title="Projects" />
+	<NavTab class="disabled nav-block" href="/anime" icon={iconStar} title="Anime" />
+	<NavTab class="disabled nav-block" href="/blog" icon={iconArticle} title="Blog" />
 </div>
