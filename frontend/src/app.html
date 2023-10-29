@@ -20,10 +20,31 @@
 
   <style>
     html,
-    body {
+    body,
+    noscript {
       margin: 0;
       height: 100%;
       font-family: 'Roboto', sans-serif;
+    }
+
+    noscript {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      color: #eeeeee;
+    }
+
+    .centered-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #legendary-div {
+      font-size: 2rem;
+      text-align: center;
     }
 
   </style>
@@ -33,6 +54,13 @@
   <div style="display: contents">
     %sveltekit.body%
   </div>
+  <noscript>
+    <div class="centered-div" id="legendary-div">
+      You have been Javascripted
+    </div>
+    <br>
+    Sorry, I use Javascript :3
+  </noscript>
 </body>
 
 </html>

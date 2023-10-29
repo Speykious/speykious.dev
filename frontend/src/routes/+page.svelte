@@ -7,7 +7,7 @@
 <main class="main-layout">
 	<Navbar />
 
-	<div class="main-body centered-content debug-3">
+	<div class="main-body centered-content">
 		<div id="legendary-div">Behold, the legendary Centered Div™</div>
 	</div>
 </main>
