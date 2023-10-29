@@ -8,7 +8,6 @@
 	<Navbar />
 
 	<div class="main-body centered-content debug-3">
-		<div class="todo">Warning: unresponsive design as of now. WIP</div>
 		<div id="legendary-div">Behold, the legendary Centered Div™</div>
 	</div>
 </main>
