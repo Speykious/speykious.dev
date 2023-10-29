@@ -2,32 +2,42 @@
 
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
     align-items: stretch;
-    height: 80px;
+    height: fit-content;
 
     background: $navbar-bg;
     font-size: 1.25rem;
     font-weight: 500;
 }
 
-// TODO: make this better. Clearly the navbar needs to be visible on phones.
-@media screen and (max-width: 1050px) {
-    nav {
-        width: 0;
-        height: 0;
-        opacity: 0;
-    }
+.spey-link {
+    align-items: center !important;
 }
 
 .nav-container {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.stretched {
+    flex-grow: 1;
+}
+
+.vertical-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.nav-tabs {
+    flex-grow: 1;
+    overflow-x: auto;
 }
 
 .nav-edge {
-    width: 100%;
-    flex-grow: 1;
     gap: 20px;
 
     &.left {
@@ -40,26 +50,33 @@ nav {
 }
 
 .nav-block {
-    padding: 20px 30px;
+    padding: 10px 30px;
+}
+
+.kinda-button {
+    &:hover {
+        background: #ffffff10;
+    }
+    transition: ease-out 0.2s;
 }
 
 .tab {
-    gap: 20px;
+    $hover-line-width: 2px;
+    gap: 10px;
     border-top: 0px solid #0000;
     border-bottom: 0px solid $foreground;
     text-decoration: none;
 
     &:hover {
-        background: #ffffff10;
-        border-top: 4px solid #0000;
-        border-bottom: 4px solid $foreground;
+        border-top: $hover-line-width solid #0000;
+        border-bottom: $hover-line-width solid $foreground;
     }
 
     &.active {
         color: $spey-red;
 
-        border-top: 4px solid #0000;
-        border-bottom: 4px solid $spey-red;
+        border-top: $hover-line-width solid #0000;
+        border-bottom: $hover-line-width solid $spey-red;
     }
 
     transition: ease-out 0.2s;
