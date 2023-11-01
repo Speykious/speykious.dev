@@ -6,29 +6,37 @@ main {
     height: 100%;
 }
 
-figure {
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
 
 // Completely reset button styling
 // Thanks https://stackoverflow.com/a/45890842
-button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
 a {
     color: $foreground;
+}
 
-    &.disabled {
-        pointer-events: none;
-        opacity: 42%;
-    }
+.disabled {
+    pointer-events: none;
+    opacity: 42%;
 }
 
 .main-layout {
@@ -37,10 +45,25 @@ a {
     justify-content: center;
     align-items: stretch;
 
-    > .main-body {
+    >.main-body {
         flex-grow: 1;
         flex-direction: column;
         align-items: stretch;
+    }
+}
+
+.center-panel {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2rem;
+    gap: 40px;
+}
+
+@media (max-width: 610px) {
+    .center-panel {
+        font-size: 1.5rem;
+        gap: 30px;
     }
 }
 
@@ -50,30 +73,37 @@ a {
     align-items: center;
 }
 
+.spey-description {
+    padding: 0 20px;
+    max-width: 727px;
+    font-weight: 300;
+}
+
 .chevronned-spey {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     height: fit-content;
 
     &.smol {
         gap: 5px;
     }
 
-    > * {
+    >* {
         &.chevron {
-            width: 32px;
-            height: 64px;
+            width: 25px;
+            height: 50px;
         }
 
         &.spey-pfp {
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
+            border: 6px solid $foreground;
         }
     }
 
-    > .smol {
+    >.smol {
         &.chevron {
             width: 8px;
             height: 16px;
@@ -82,11 +112,11 @@ a {
         &.spey-pfp {
             width: 30px;
             height: 30px;
+            border: 2px solid $foreground;
         }
     }
 }
 
 .spey-pfp {
     border-radius: 100%;
-    border: 2px solid $foreground;
 }

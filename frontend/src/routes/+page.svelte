@@ -2,6 +2,10 @@
 	import '$lib/assets/scss/spey.scss';
 	import '$lib/assets/scss/debug.scss';
 
+	import speyPng from '$lib/assets/images/spey.png';
+	import roundChevronLeft from '$lib/assets/svgs/round-chevron-left.svg';
+	import roundChevronRight from '$lib/assets/svgs/round-chevron-right.svg';
+
 	import archBtw from '$lib/assets/svgs/icon-arch.svg';
 
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
@@ -52,11 +56,22 @@
 
 	<div class="main-body centered-content">
 		<figure id="spey-setup-bg" bind:this={speySetup} />
-		<div class="center-panel centered-content" id="legendary-div">
-			Behold, the  Centered Div™
+		<div class="center-panel centered-content">
+			<figure class="chevronned-spey">
+				<img class="chevron" src={roundChevronLeft} alt="left chevron" />
+				<img class="spey-pfp" src={speyPng} alt="yours truly" />
+				<img class="chevron" src={roundChevronRight} alt="right chevron" />
+			</figure>
+			<h1>Hello :3</h1>
+			<div class="spey-description">
+				I'm <strong>Speykious</strong>, a 22 year old software developer, huge weeb and rhythm games
+				enthusiast.
+			</div>
 		</div>
 		<footer>
-			<div class="footer-text" id="not-sponsored-by-the-rust-foundation">This website is not sponsored by the Rust Foundation</div>
+			<div class="footer-text" id="not-sponsored-by-the-rust-foundation">
+				This website is not sponsored by the Rust Foundation
+			</div>
 			<div class="footer-text" id="arch-btw">
 				<div>I use Arch btw</div>
 				<img src={archBtw} alt="Arch btw" />
