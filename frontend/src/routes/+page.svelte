@@ -6,7 +6,7 @@
 
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
 
-	let speySetup: HTMLDivElement;
+	let speySetup: HTMLElement;
 
 	let pageWidth: number;
 	let pageHeight: number;
@@ -30,15 +30,15 @@
 	<Navbar />
 
 	<div class="main-body centered-content">
-		<div id="spey-setup-bg" bind:this={speySetup} />
+		<figure id="spey-setup-bg" bind:this={speySetup} />
 		<div class="center-panel centered-content" id="legendary-div">
-			Behold, the legendary Centered Div™
+			Behold, the  Centered Div™
 		</div>
 		<footer>
 			<div class="footer-text">This website is not sponsored by the Rust Foundation</div>
 			<div class="footer-text">
 				<div>I use Arch btw</div>
-				<img class="arch-btw" src={archBtw} alt="Arch btw" />
+				<img src={archBtw} alt="Arch btw" />
 			</div>
 		</footer>
 	</div>

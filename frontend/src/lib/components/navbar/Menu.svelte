@@ -5,16 +5,103 @@
 
 	import iconMenu from '$lib/assets/svgs/icon-menu.svg';
 
-    export let open = false;
+	export let open = false;
 
-    function toggleOpen() {
-        open = !open;
-    }
+	function toggleOpen() {
+		open = !open;
+	}
 
 	let className: string = '';
 	export { className as class };
 </script>
 
-<button on:click={toggleOpen} class={`nav-edge right nav-block kinda-button centered-content ${className}`} aria-pressed="false" tabindex="0">
+<!-- <button on:click={toggleOpen} class={`nav-edge right nav-block kinda-button centered-content ${className}`} aria-pressed="false" tabindex="0">
 	<img class="tab-icon" src={iconMenu} alt="Menu" />
-</button>
+</button> -->
+
+<ul class="navbar" id="navbar">
+	<li><a href="/">Home</a></li>
+	<li><a href="/">Profile</a></li>
+	<li><a href="/">About</a></li>
+	<li><a href="/">Contacts</a></li>
+	<a class="close" href="/">
+		<img src="https://ljc-dev.github.io/testing0/ham-close.svg" alt="close" />
+	</a>
+</ul>
+<a class="hamburger" href="#navbar">
+	<img class="tab-icon" src={iconMenu} alt="Menu" />
+</a>
+
+<style lang="scss">
+	.hamburger,
+	.close {
+		border: none;
+		cursor: pointer;
+		/* position absolute position the icons relative to the body because they have no position relative parents*/
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 36px;
+		height: 36px;
+	}
+
+	.hamburger {
+		background: white;
+	}
+
+	.close {
+		background: black;
+	}
+
+	.hamburger img,
+	.close img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.navbar {
+		position: absolute;
+		/* a higher z-index put navbar above hamburger */
+		z-index: 1000;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+		/* basic menu styling*/
+		list-style: none;
+		background: black;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-evenly;
+		align-items: center;
+		/* animate slide up/down */
+		transform: translateY(-100%);
+		transition: transform 0.2s ease;
+	}
+
+	/* :target is called when its anchor id #navbar is called by clicking on the hamburger which has href="#navbar" */
+
+	.navbar:target {
+		/* show navbar */
+		transform: translateY(0);
+	}
+
+	li a {
+		display: block;
+		font-family: 'Open Sans', sans-serif;
+		color: white;
+		font-weight: bold;
+		font-size: 1.2rem;
+		/* remove default underline and add our own with padding and border bottom */
+		text-decoration: none;
+		border-bottom: 1px solid black;
+		padding-bottom: 0.5rem;
+	}
+
+	li a:hover,
+	li a:focus {
+		/* show border bottom */
+		border-bottom: 1px solid white;
+	}
+</style>

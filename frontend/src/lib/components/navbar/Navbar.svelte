@@ -3,48 +3,33 @@
 	import '$lib/assets/scss/debug.scss';
 	import '$lib/assets/scss/navbar.scss';
 
-	import SpeykiousDev from '$lib/components/navbar/SpeykiousDev.svelte';
+	import iconHome from '$lib/assets/svgs/icon-home.svg';
+	import iconCodeBlocks from '$lib/assets/svgs/icon-code-blocks.svg';
+	import iconStar from '$lib/assets/svgs/icon-star.svg';
+	import iconArticle from '$lib/assets/svgs/icon-article.svg';
 
-	import NavTabs from '$lib/components/navbar/NavTabs.svelte';
-	import Menu from './Menu.svelte';
+	import SpeykiousDev from '$lib/components/navbar/SpeykiousDev.svelte';
+	import NavTab from '$lib/components/navbar/NavTab.svelte';
 
 	let windowWidth: number;
-	let menuOpen: boolean;
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
 
 <nav>
-	{#if windowWidth >= 1080}
-		<SpeykiousDev />
-		<NavTabs />
+	<SpeykiousDev />
 
-		<div class="nav-edge right nav-block nav-container">
-			<div class="todo">(LANGUAGE SECTION, TODO)</div>
-		</div>
-	{:else if windowWidth >= 616}
-		<div class="vertical-container stretched">
-			<div class="nav-container">
-				<SpeykiousDev class="stretched" />
-				<div class="nav-edge right nav-block nav-container">
-					<div class="todo">(LANGUAGE SECTION, TODO)</div>
-				</div>
-			</div>
-			<div class="nav-container">
-				<NavTabs />
-			</div>
-		</div>
-	{:else}
-		<div class="vertical-container stretched">
-			<div class="nav-container">
-				<SpeykiousDev class="stretched" textLink={windowWidth >= 360} />
-				<Menu bind:open={menuOpen} />
-			</div>
-			{#if menuOpen}
-				<div class="nav-container">
-					<NavTabs class="vertical-container" />
-				</div>
-			{/if}
-		</div>
-	{/if}
+	<input id="hamburger" type="checkbox" />
+	<label class="menu-button-container nav-block nav-container kinda-button" for="hamburger">
+		<div class="menu-button" />
+	</label>
+
+	<ul class="menu nav-container">
+		<li><NavTab class="active nav-block" href="/" icon={iconHome} title="Home" /></li>
+		<li>
+			<NavTab class="disabled nav-block" href="/projects" icon={iconCodeBlocks} title="Projects" />
+		</li>
+		<li><NavTab class="disabled nav-block" href="/anime" icon={iconStar} title="Anime" /></li>
+		<li><NavTab class="disabled nav-block" href="/blog" icon={iconArticle} title="Blog" /></li>
+	</ul>
 </nav>

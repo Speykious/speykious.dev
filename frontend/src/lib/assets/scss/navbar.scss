@@ -12,30 +12,10 @@ nav {
     font-weight: 500;
 }
 
-.spey-link {
-    align-items: center !important;
-}
-
 .nav-container {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: stretch;
-}
-
-.stretched {
-    flex-grow: 1;
-}
-
-.vertical-container {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-direction: column;
-}
-
-.nav-tabs {
-    flex-grow: 1;
-    overflow-x: auto;
 }
 
 .nav-edge {
@@ -58,6 +38,7 @@ nav {
     &:hover {
         background: #ffffff10;
     }
+
     transition: ease-out 0.2s;
 }
 
@@ -81,4 +62,122 @@ nav {
     }
 
     transition: ease-out 0.2s;
+}
+
+// Menu
+
+.menu {
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    overflow-x: auto;
+    list-style-type: none;
+
+    >li {
+        display: flex;
+        margin: 0;
+        overflow: hidden;
+    }
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 3px;
+    width: 24px;
+    transition: 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menu-button {
+    &::before {
+        content: '';
+        margin-top: -8px;
+    }
+
+    &::after {
+        content: '';
+        margin-top: 8px;
+    }
+}
+
+.menu-button-container {
+    display: none;
+    cursor: pointer;
+
+    width: 30px;
+    height: 100%;
+    padding: 0 30px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#hamburger {
+    display: none;
+
+    &:checked+.menu-button-container .menu-button {
+        background: rgba(255, 255, 255, 0);
+
+        &::before {
+            margin-top: 0px;
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            margin-top: 0px;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .spey-link {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .menu-button-container {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        margin-top: 50px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        >li {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            width: 100%;
+            background-color: $navbar-bg;
+
+            > * {
+                flex-grow: 1;
+            }
+        }
+    }
+
+    #hamburger~.menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 250ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #hamburger:checked~.menu li {
+        height: 2.5em;
+        transition: height 250ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
 }
