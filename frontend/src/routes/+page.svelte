@@ -35,8 +35,8 @@
 			Behold, the  Centered Div™
 		</div>
 		<footer>
-			<div class="footer-text">This website is not sponsored by the Rust Foundation</div>
-			<div class="footer-text">
+			<div class="footer-text" id="not-sponsored-by-the-rust-foundation">This website is not sponsored by the Rust Foundation</div>
+			<div class="footer-text" id="arch-btw">
 				<div>I use Arch btw</div>
 				<img src={archBtw} alt="Arch btw" />
 			</div>
@@ -64,6 +64,16 @@
 			display: flex;
 			align-items: center;
 			gap: 10px;
+		}
+	}
+
+	@media (max-width: 620px) {
+		footer {
+			justify-content: center;
+		}
+
+		#not-sponsored-by-the-rust-foundation {
+			display: none;
 		}
 	}
 
