@@ -11,9 +11,13 @@
 	let pageWidth: number;
 	let pageHeight: number;
 
+	function clamp(x: number, a: number, b: number): number {
+		return Math.min(b, Math.max(a, x));
+	}
+
 	function updateParallax(pageX: number, pageY: number) {
-		const parallaxX = pageX / pageWidth;
-		const parallaxY = pageY / pageHeight;
+		const parallaxX = clamp(pageX / pageWidth, 0, 1);
+		const parallaxY = clamp(pageY / pageHeight, 0, 1);
 
 		speySetup.style.top = `${-10 * (1 - parallaxY)}%`;
 		speySetup.style.left = `${-10 * (1 - parallaxX)}%`;
