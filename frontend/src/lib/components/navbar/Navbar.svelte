@@ -26,10 +26,8 @@
 
 	<ul class="menu nav-container">
 		<li><NavTab class="active nav-block" href="/" icon={iconHome} title="Home" /></li>
-		<li>
-			<NavTab class="disabled nav-block" href="/projects" icon={iconCodeBlocks} title="Projects" />
-		</li>
-		<li><NavTab class="disabled nav-block" href="/anime" icon={iconStar} title="Anime" /></li>
-		<li><NavTab class="disabled nav-block" href="/blog" icon={iconArticle} title="Blog" /></li>
+		<li><NavTab class="disabled nav-block" href="/" icon={iconCodeBlocks} title="Projects" /></li>
+		<li><NavTab class="disabled nav-block" href="/" icon={iconStar} title="Anime" /></li>
+		<li><NavTab class="disabled nav-block" href="/" icon={iconArticle} title="Blog" /></li>
 	</ul>
 </nav>
