@@ -5,6 +5,7 @@ nav {
     justify-content: stretch;
     align-items: stretch;
     height: fit-content;
+    z-index: 10;
 
     background: $navbar-bg;
     font-size: 1.25rem;

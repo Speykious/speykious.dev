@@ -40,7 +40,7 @@ a {
     > .main-body {
         flex-grow: 1;
         flex-direction: column;
-        gap: 40px;
+        align-items: stretch;
     }
 }
 
