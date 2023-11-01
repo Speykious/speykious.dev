@@ -11,17 +11,34 @@
 	let pageWidth: number;
 	let pageHeight: number;
 
-	function onMouseMove(e: MouseEvent) {
-		const parallaxX = e.pageX / pageWidth;
-		const parallaxY = e.pageY / pageHeight;
+	function updateParallax(pageX: number, pageY: number) {
+		const parallaxX = pageX / pageWidth;
+		const parallaxY = pageY / pageHeight;
 
 		speySetup.style.top = `${-10 * (1 - parallaxY)}%`;
 		speySetup.style.left = `${-10 * (1 - parallaxX)}%`;
+	}
+
+	function onMouseMove(e: MouseEvent) {
+		updateParallax(e.pageX, e.pageY);
+	}
+
+	function onTouchMove(e: TouchEvent) {
+		let avgPageX = 0;
+		let avgPageY = 0;
+
+		for (const touch of e.touches) {
+			avgPageX += touch.pageX / e.touches.length;
+			avgPageY += touch.pageY / e.touches.length;
+		}
+
+		updateParallax(avgPageX, avgPageY);
 	}
 </script>
 
 <svelte:window
 	on:mousemove={onMouseMove}
+	on:touchmove={onTouchMove}
 	bind:innerWidth={pageWidth}
 	bind:innerHeight={pageHeight}
 />
