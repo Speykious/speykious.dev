@@ -70,7 +70,7 @@
 		</div>
 		<footer>
 			<div class="footer-text" id="not-sponsored-by-the-rust-foundation">
-				This website is not sponsored by the Rust Foundation
+				This website is not sponsored by the Rust Foundation™
 			</div>
 			<div class="footer-text" id="arch-btw">
 				<div>I use Arch btw</div>
