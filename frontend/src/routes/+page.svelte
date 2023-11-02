@@ -8,8 +8,6 @@
 
 	import archBtw from '$lib/assets/svgs/icon-arch.svg';
 
-	import Navbar from '$lib/components/navbar/Navbar.svelte';
-
 	let speySetup: HTMLElement;
 
 	let pageWidth: number;

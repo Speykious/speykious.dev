@@ -1,4 +1,7 @@
 <script>
+	import '$lib/assets/scss/spey.scss';
+	import '$lib/assets/scss/navbar.scss';
+
 	import iconHome from '$lib/assets/svgs/icon-home.svg';
 	import iconCodeBlocks from '$lib/assets/svgs/icon-code-blocks.svg';
 	import iconStar from '$lib/assets/svgs/icon-star.svg';

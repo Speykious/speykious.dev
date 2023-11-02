@@ -41,12 +41,13 @@ a {
 
 .main-body > * {
     z-index: 1;
+    margin-top: 54px;
 }
 
 .main-layout {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: left;
     align-items: stretch;
 
     >.main-body {
