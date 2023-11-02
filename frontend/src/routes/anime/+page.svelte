@@ -8,33 +8,60 @@
 		<h3>My Personal Anime 3x3</h3>
 		<div class="content">
 			<article class="anime-3x3">
-				<button class="anime tl">
-					<div class="title">Beyblade</div>
-				</button>
-				<button class="anime tc">
-					<div class="title">Dragon Ball</div>
-				</button>
-				<button class="anime tr">
-					<div class="title">Inazuma Eleven</div>
-				</button>
-				<button class="anime cl">
-					<div class="title">Takagi-san</div>
-				</button>
-				<button class="anime cc">
-					<div class="title">Toradora!</div>
-				</button>
-				<button class="anime cr">
-					<div class="title">Assassination Classroom</div>
-				</button>
-				<button class="anime bl">
-					<div class="title">Reincarnated as a Sword</div>
-				</button>
-				<button class="anime bc">
-					<div class="title">Bocchi The Rock!</div>
-				</button>
-				<button class="anime br">
-					<div class="title">Talentless Nana</div>
-				</button>
+				<label>
+					<input type="radio" name="anime" />
+					<div class="anime tl">
+						<div class="title">Beyblade</div>
+					</div>
+				</label>
+				<label>
+					<input type="radio" name="anime" />
+					<div class="anime tc">
+						<div class="title">Dragon Ball</div>
+					</div>
+				</label>
+				<label>
+					<input type="radio" name="anime" />
+					<div class="anime tr">
+						<div class="title">Inazuma Eleven</div>
+					</div>
+				</label>
+				<label>
+					<input type="radio" name="anime" />
+					<div class="anime cl">
+						<div class="title">Takagi-san</div>
+					</div>
+				</label>
+				<label>
+					<input type="radio" name="anime" />
+					<div class="anime cc">
+						<div class="title">Toradora!</div>
+					</div>
+				</label>
+				<label>
+					<input type="radio" name="anime" />
+					<div class="anime cr">
+						<div class="title">Assassination Classroom</div>
+					</div>
+				</label>
+				<label>
+					<input type="radio" name="anime" />
+					<div class="anime bl">
+						<div class="title">Reincarnated as a Sword</div>
+					</div>
+				</label>
+				<label>
+					<input type="radio" name="anime" />
+					<div class="anime bc">
+						<div class="title">Bocchi The Rock!</div>
+					</div>
+				</label>
+				<label>
+					<input type="radio" name="anime" />
+					<div class="anime br">
+						<div class="title">Talentless Nana</div>
+					</div>
+				</label>
 			</article>
 		</div>
 	</section>
@@ -74,13 +101,40 @@
 			'cl cc cr'
 			'bl bc br';
 
-		> .anime {
+		label {
 			display: flex;
 			justify-content: center;
 			align-items: center;
+		}
 
-			// TODO: make anime boxes interactive to show a description
+		input[type='radio'] {
+			position: relative;
+			appearance: none;
+			margin: 0;
+			width: 0;
+			height: 0;
+
 			cursor: help;
+			transition: 400ms cubic-bezier(0.23, 1, 0.32, 1);
+
+			&:checked ~ .anime {
+				border-width: 20px;
+
+				background-size: calc(100% + 20px);
+				&:hover {
+					background-size: calc(110% + 20px);
+				}
+
+				> .title {
+					opacity: 100%;
+				}
+			}
+		}
+
+		.anime {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
 			width: 100%;
 			height: 100%;
@@ -102,10 +156,9 @@
 			}
 
 			> .title {
-				position: relative;
 				text-align: center;
-				opacity: 0;
 				width: fit-content;
+				opacity: 0;
 
 				margin: 5px;
 				padding: 10px 10px;
@@ -175,7 +228,18 @@
 				'cl cc cr'
 				'bl bc br';
 
-			> .anime {
+			input[type='radio'] {
+				&:checked ~ .anime {
+					border-width: 12px;
+
+					background-size: calc(100% + 12px);
+					&:hover {
+						background-size: calc(110% + 12px);
+					}
+				}
+			}
+
+			.anime {
 				border: 6px solid;
 			}
 		}
