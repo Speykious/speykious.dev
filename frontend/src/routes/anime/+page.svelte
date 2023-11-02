@@ -105,6 +105,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			cursor: pointer;
 		}
 
 		input[type='radio'] {
@@ -114,7 +115,6 @@
 			width: 0;
 			height: 0;
 
-			cursor: help;
 			transition: 400ms cubic-bezier(0.23, 1, 0.32, 1);
 
 			&:checked ~ .anime {
@@ -148,7 +148,7 @@
 
 			&:hover {
 				background-size: calc(110% + 10px);
-				filter: brightness(70%);
+				filter: brightness(80%);
 
 				> .title {
 					opacity: 100%;
