@@ -4,20 +4,37 @@
 </script>
 
 <div class="center-panel centered-content">
-
 	<section>
 		<h3>My Personal Anime 3x3</h3>
 		<div class="content">
 			<article class="anime-3x3">
-				<button class="anime tl" />
-				<button class="anime tc" />
-				<button class="anime tr" />
-				<button class="anime cl" />
-				<button class="anime cc" />
-				<button class="anime cr" />
-				<button class="anime bl" />
-				<button class="anime bc" />
-				<button class="anime br" />
+				<button class="anime tl">
+					<div class="title">Beyblade</div>
+				</button>
+				<button class="anime tc">
+					<div class="title">Dragon Ball</div>
+				</button>
+				<button class="anime tr">
+					<div class="title">Inazuma Eleven</div>
+				</button>
+				<button class="anime cl">
+					<div class="title">Takagi-san</div>
+				</button>
+				<button class="anime cc">
+					<div class="title">Toradora!</div>
+				</button>
+				<button class="anime cr">
+					<div class="title">Assassination Classroom</div>
+				</button>
+				<button class="anime bl">
+					<div class="title">Reincarnated as a Sword</div>
+				</button>
+				<button class="anime bc">
+					<div class="title">Bocchi The Rock!</div>
+				</button>
+				<button class="anime br">
+					<div class="title">Talentless Nana</div>
+				</button>
 			</article>
 		</div>
 	</section>
@@ -58,10 +75,18 @@
 			'bl bc br';
 
 		> .anime {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			// TODO: make anime boxes interactive to show a description
+			cursor: help;
+
 			width: 100%;
 			height: 100%;
 			box-sizing: border-box;
 			border: 10px solid;
+
 			background-size: calc(100% + 10px);
 			background-position: center;
 			background-repeat: no-repeat;
@@ -70,6 +95,27 @@
 			&:hover {
 				background-size: calc(110% + 10px);
 				filter: brightness(70%);
+
+				> .title {
+					opacity: 100%;
+				}
+			}
+
+			> .title {
+				position: relative;
+				text-align: center;
+				opacity: 0;
+				width: fit-content;
+
+				margin: 5px;
+				padding: 10px 10px;
+				background: #00000060;
+				border-radius: 10px;
+
+				font-size: 1rem;
+				font-weight: bold;
+
+				transition: 400ms cubic-bezier(0.23, 1, 0.32, 1);
 			}
 
 			&.tl {
