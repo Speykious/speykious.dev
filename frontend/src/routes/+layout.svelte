@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '$lib/assets/scss/spey.scss';
 	import '$lib/assets/scss/navbar.scss';
 
@@ -9,10 +9,23 @@
 
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
 	import NavTab from '$lib/components/navbar/NavTab.svelte';
+
+	let menuChecked: boolean;
+
+	function closeMenu() {
+		menuChecked = false;
+	}
+
+	import { page } from '$app/stores';
+	$: {
+		// Close menu when URL changes
+		$page.url.pathname;
+		closeMenu();
+	}
 </script>
 
 <main class="main-layout">
-	<Navbar>
+	<Navbar bind:menuChecked={menuChecked}>
 		<NavTab href="/" icon={iconHome} title="Home" />
 		<NavTab href="/" icon={iconCodeBlocks} title="Projects" disabled />
 		<NavTab href="/anime" icon={iconStar} title="Anime" />

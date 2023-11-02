@@ -4,9 +4,9 @@
 	import '$lib/assets/scss/navbar.scss';
 
 	import SpeykiousDev from '$lib/components/navbar/SpeykiousDev.svelte';
-	import NavTab from '$lib/components/navbar/NavTab.svelte';
 
 	let windowWidth: number;
+	export let menuChecked: boolean = false;
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
@@ -14,7 +14,7 @@
 <nav>
 	<SpeykiousDev />
 
-	<input id="hamburger" type="checkbox" />
+	<input id="hamburger" type="checkbox" bind:checked={menuChecked} />
 	<label class="menu-button-container nav-block nav-container kinda-button" for="hamburger">
 		<div class="menu-button" />
 	</label>
