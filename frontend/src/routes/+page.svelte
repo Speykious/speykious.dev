@@ -51,40 +51,30 @@
 	bind:innerHeight={pageHeight}
 />
 
-<main class="main-layout">
-	<Navbar />
-
-	<div class="main-body centered-content">
-		<figure id="spey-setup-bg" bind:this={speySetup} />
-		<div class="center-panel centered-content">
-			<figure class="chevronned-spey">
-				<img class="chevron" src={roundChevronLeft} alt="left chevron" />
-				<img class="spey-pfp" src={speyPng} alt="yours truly" />
-				<img class="chevron" src={roundChevronRight} alt="right chevron" />
-			</figure>
-			<h1>Hello :3</h1>
-			<div class="spey-description">
-				I'm <strong>Speykious</strong>, a 22 year old software developer, huge weeb and rhythm games
-				enthusiast.
-			</div>
-		</div>
-		<footer>
-			<div class="footer-text" id="not-sponsored-by-the-rust-foundation">
-				This website is not sponsored by the Rust Foundation™
-			</div>
-			<div class="footer-text" id="arch-btw">
-				<div>I use Arch btw</div>
-				<img src={archBtw} alt="Arch btw" />
-			</div>
-		</footer>
+<figure id="spey-setup-bg" bind:this={speySetup} />
+<div class="center-panel centered-content">
+	<figure class="chevronned-spey">
+		<img class="chevron" src={roundChevronLeft} alt="left chevron" />
+		<img class="spey-pfp" src={speyPng} alt="yours truly" />
+		<img class="chevron" src={roundChevronRight} alt="right chevron" />
+	</figure>
+	<h1>Hello :3</h1>
+	<div class="spey-description">
+		I'm <strong>Speykious</strong>, a 22 year old software developer, huge weeb and rhythm games
+		enthusiast.
 	</div>
-</main>
+</div>
+<footer>
+	<div class="footer-text" id="not-sponsored-by-the-rust-foundation">
+		This website is not sponsored by the Rust Foundation™
+	</div>
+	<div class="footer-text" id="arch-btw">
+		<div>I use Arch btw</div>
+		<img src={archBtw} alt="Arch btw" />
+	</div>
+</footer>
 
 <style lang="scss">
-	.main-body > * {
-		z-index: 1;
-	}
-
 	.center-panel {
 		display: flex;
 		flex-grow: 1;

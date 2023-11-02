@@ -42,7 +42,7 @@ nav {
     transition: ease-out 0.2s;
 }
 
-.tab {
+.navtab {
     $hover-line-width: 2px;
     gap: 10px;
     border-top: 0px solid #0000;
@@ -54,7 +54,7 @@ nav {
         border-bottom: $hover-line-width solid $foreground;
     }
 
-    &.active {
+    &[aria-current='true'] {
         color: $spey-red;
 
         border-top: $hover-line-width solid #0000;

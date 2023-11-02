@@ -39,6 +39,10 @@ a {
     opacity: 42%;
 }
 
+.main-body > * {
+    z-index: 1;
+}
+
 .main-layout {
     display: flex;
     flex-direction: column;
