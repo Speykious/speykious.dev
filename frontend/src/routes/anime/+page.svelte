@@ -165,4 +165,19 @@
 			}
 		}
 	}
+
+	@media (max-width: 620px) {
+		.anime-3x3 {
+			border: px solid;
+			grid-template: 100px 162px 100px / 100px 162px 100px;
+			grid-template-areas:
+				'tl tc tr'
+				'cl cc cr'
+				'bl bc br';
+
+			> .anime {
+				border: 6px solid;
+			}
+		}
+	}
 </style>
