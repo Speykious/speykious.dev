@@ -4,7 +4,7 @@
 </script>
 
 <div class="center-panel centered-content">
-	<section>
+	<section id="personal-3x3">
 		<h3>My Personal Anime 3x3</h3>
 		<div class="content">
 			<article class="anime-3x3">
