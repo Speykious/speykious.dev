@@ -32,6 +32,11 @@ input[type="reset"] {
 
 a {
     color: $foreground;
+    transition: 400ms $smooth-out;
+
+    &:hover {
+        color: $spey-red;
+    }
 }
 
 .disabled {
