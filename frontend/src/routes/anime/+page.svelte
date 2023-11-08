@@ -271,3 +271,28 @@
 		</div>
 	</section>
 </div>
+
+<style lang="scss">
+	.center-panel {
+		align-items: stretch;
+
+		> section {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 20px;
+
+			margin: 40px 0;
+			padding: 30px;
+			background: #ffffff10;
+			border-top: 2px solid #ffffff30;
+			border-bottom: 2px solid #ffffff30;
+
+			> .content {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+			}
+		}
+	}
+</style>
