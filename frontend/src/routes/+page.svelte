@@ -7,11 +7,14 @@
 	import roundChevronRight from '$lib/assets/svgs/round-chevron-right.svg';
 
 	import archBtw from '$lib/assets/svgs/icon-arch.svg';
+	import { onMount } from 'svelte';
 
 	let speySetup: HTMLElement;
 
 	let pageWidth: number;
 	let pageHeight: number;
+
+	// parallax
 
 	function clamp(x: number, a: number, b: number): number {
 		return Math.min(b, Math.max(a, x));
@@ -40,6 +43,66 @@
 
 		updateParallax(avgPageX, avgPageY);
 	}
+
+	// age calculation
+
+	let speyAge: HTMLElement;
+
+	const speyBirthYear = 2001;
+	const speyBirthMonth = 10;
+	const speyBirthDay = 3;
+
+	function secsSinceEpoch(date: Date): number {
+		return date.getTime() / 1000.0;
+	}
+
+	onMount(() => {
+		let frame: number;
+
+		function updateOnFrame() {
+			const todayDate = new Date();
+			const today = secsSinceEpoch(todayDate);
+			const thisYear = todayDate.getFullYear();
+
+			const birthdayThisYear = secsSinceEpoch(new Date(thisYear, speyBirthMonth, speyBirthDay));
+
+			if (today >= birthdayThisYear) {
+				// birthday coming up next year!
+
+				const birthdayNextYear = secsSinceEpoch(
+					new Date(thisYear + 1, speyBirthMonth, speyBirthDay)
+				);
+
+				const ageYear = thisYear - speyBirthYear;
+				const ageDecimals = (today - birthdayThisYear) / (birthdayNextYear - birthdayThisYear);
+
+				speyAge.innerText = (ageYear + ageDecimals).toLocaleString("en-US", {
+					maximumFractionDigits: 8,
+					minimumFractionDigits: 8,
+				});
+			} else {
+				// birthday coming up this year!
+
+				const birthdayPrevYear = secsSinceEpoch(
+					new Date(thisYear - 1, speyBirthMonth, speyBirthDay)
+				);
+
+				const ageYear = thisYear - 1 - speyBirthYear;
+				const ageDecimals = (today - birthdayPrevYear) / (birthdayThisYear - birthdayPrevYear);
+
+				speyAge.innerText = (ageYear + ageDecimals).toLocaleString("en-US", {
+					maximumFractionDigits: 7,
+					minimumFractionDigits: 7,
+				});
+			}
+
+			requestAnimationFrame(updateOnFrame);
+		}
+
+		updateOnFrame();
+
+		return () => cancelAnimationFrame(frame);
+	});
 </script>
 
 <svelte:window
@@ -58,8 +121,9 @@
 	</figure>
 	<h1>Hello :3</h1>
 	<div class="spey-description">
-		I'm <strong>Speykious</strong>, a 22 year old software developer, huge weeb and rhythm games
-		enthusiast.
+		I'm <strong>Speykious</strong>, a
+		<span id="spey-age" bind:this={speyAge}>??</span>
+		year old software developer, huge weeb and rhythm games enthusiast.
 	</div>
 </div>
 <footer>
@@ -109,11 +173,11 @@
 		height: 110%;
 		z-index: 0;
 
-		background-image: url('$lib/assets/images/spey-coe-setup.jpg');
+		background-image: url('https://fs.speykious.dev/spey-coe-setup-2024-hwysi.jpg');
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
 
-		filter: blur(5px) brightness(50%);
+		filter: blur(10px) brightness(50%);
 	}
 </style>
