@@ -48,49 +48,48 @@
 
 	let speyAge: HTMLElement;
 
-	const speyBirthYear = 2001;
-	const speyBirthMonth = 10;
-	const speyBirthDay = 3;
-
 	function secsSinceEpoch(date: Date): number {
 		return date.getTime() / 1000.0;
+	}
+
+	function speyDecimalAge() {
+		const speyBirthYear = 2001;
+
+		const todayDate = new Date();
+		const today = secsSinceEpoch(todayDate);
+		const thisYear = todayDate.getFullYear();
+
+		const birthdayThisYear = secsSinceEpoch(new Date(`Oct 03 ${thisYear} 00:00:00 UTC+2`));
+
+		if (today >= birthdayThisYear) {
+			// birthday coming up next year!
+
+			const birthdayNextYear = secsSinceEpoch(new Date(`Oct 03 ${thisYear + 1} 00:00:00 UTC+2`));
+
+			const ageYear = thisYear - speyBirthYear;
+			const ageDecimals = (today - birthdayThisYear) / (birthdayNextYear - birthdayThisYear);
+
+			return ageYear + ageDecimals;
+		} else {
+			// birthday coming up this year!
+
+			const birthdayPrevYear = secsSinceEpoch(new Date(`Oct 03 ${thisYear - 1} 00:00:00 UTC+2`));
+
+			const ageYear = thisYear - 1 - speyBirthYear;
+			const ageDecimals = (today - birthdayPrevYear) / (birthdayThisYear - birthdayPrevYear);
+
+			return ageYear + ageDecimals;
+		}
 	}
 
 	onMount(() => {
 		let frame: number;
 
 		function updateOnFrame() {
-			const todayDate = new Date();
-			const today = secsSinceEpoch(todayDate);
-			const thisYear = todayDate.getFullYear();
-
-			const birthdayThisYear = secsSinceEpoch(new Date(`Oct 03 ${thisYear} 00:00:00 UTC+2`));
-
-			if (today >= birthdayThisYear) {
-				// birthday coming up next year!
-
-				const birthdayNextYear = secsSinceEpoch(new Date(`Oct 03 ${thisYear + 1} 00:00:00 UTC+2`));
-
-				const ageYear = thisYear - speyBirthYear;
-				const ageDecimals = (today - birthdayThisYear) / (birthdayNextYear - birthdayThisYear);
-
-				speyAge.innerText = (ageYear + ageDecimals).toLocaleString('en-US', {
-					maximumFractionDigits: 8,
-					minimumFractionDigits: 8
-				});
-			} else {
-				// birthday coming up this year!
-
-				const birthdayPrevYear = secsSinceEpoch(new Date(`Oct 03 ${thisYear - 1} 00:00:00 UTC+2`));
-
-				const ageYear = thisYear - 1 - speyBirthYear;
-				const ageDecimals = (today - birthdayPrevYear) / (birthdayThisYear - birthdayPrevYear);
-
-				speyAge.innerText = (ageYear + ageDecimals).toLocaleString('en-US', {
-					maximumFractionDigits: 7,
-					minimumFractionDigits: 7
-				});
-			}
+			speyAge.innerText = speyDecimalAge().toLocaleString('en-US', {
+				maximumFractionDigits: 7,
+				minimumFractionDigits: 7
+			});
 
 			requestAnimationFrame(updateOnFrame);
 		}
