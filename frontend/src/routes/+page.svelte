@@ -64,35 +64,31 @@
 			const today = secsSinceEpoch(todayDate);
 			const thisYear = todayDate.getFullYear();
 
-			const birthdayThisYear = secsSinceEpoch(new Date(thisYear, speyBirthMonth, speyBirthDay));
+			const birthdayThisYear = secsSinceEpoch(new Date(`Oct 03 ${thisYear} 00:00:00 UTC+2`));
 
 			if (today >= birthdayThisYear) {
 				// birthday coming up next year!
 
-				const birthdayNextYear = secsSinceEpoch(
-					new Date(thisYear + 1, speyBirthMonth, speyBirthDay)
-				);
+				const birthdayNextYear = secsSinceEpoch(new Date(`Oct 03 ${thisYear + 1} 00:00:00 UTC+2`));
 
 				const ageYear = thisYear - speyBirthYear;
 				const ageDecimals = (today - birthdayThisYear) / (birthdayNextYear - birthdayThisYear);
 
-				speyAge.innerText = (ageYear + ageDecimals).toLocaleString("en-US", {
+				speyAge.innerText = (ageYear + ageDecimals).toLocaleString('en-US', {
 					maximumFractionDigits: 8,
-					minimumFractionDigits: 8,
+					minimumFractionDigits: 8
 				});
 			} else {
 				// birthday coming up this year!
 
-				const birthdayPrevYear = secsSinceEpoch(
-					new Date(thisYear - 1, speyBirthMonth, speyBirthDay)
-				);
+				const birthdayPrevYear = secsSinceEpoch(new Date(`Oct 03 ${thisYear - 1} 00:00:00 UTC+2`));
 
 				const ageYear = thisYear - 1 - speyBirthYear;
 				const ageDecimals = (today - birthdayPrevYear) / (birthdayThisYear - birthdayPrevYear);
 
-				speyAge.innerText = (ageYear + ageDecimals).toLocaleString("en-US", {
+				speyAge.innerText = (ageYear + ageDecimals).toLocaleString('en-US', {
 					maximumFractionDigits: 7,
-					minimumFractionDigits: 7,
+					minimumFractionDigits: 7
 				});
 			}
 
