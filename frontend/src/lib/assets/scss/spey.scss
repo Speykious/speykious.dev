@@ -89,6 +89,63 @@ a {
     font-weight: 300;
 }
 
+.spey-socials-bar {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 10px;
+    border-radius: 999px;
+
+    gap: 10px;
+}
+
+.spey-social {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    background: #fff3;
+    padding: 10px;
+    border-radius: 999px;
+
+    position: relative;
+    font-size: 0.8rem;
+
+    >img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    &:hover {
+        background-color: rgba($spey-red, 0.727);
+
+        .tooltip {
+            visibility: visible;
+            opacity: 100%;
+            top: 120%;
+        }
+    }
+}
+
+.tooltip {
+    visibility: hidden;
+    opacity: 0%;
+    background-color: #000a;
+    color: $foreground;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px 10px;
+
+    position: absolute;
+    transform-origin: center;
+    transform: translateX(-50%);
+    z-index: 1;
+    top: 140%;
+    left: 50%;
+
+    transition: $smooth-out 0.3s;
+}
+
 .chevronned-spey {
     display: flex;
     justify-content: center;
