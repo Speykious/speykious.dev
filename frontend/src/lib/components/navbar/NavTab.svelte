@@ -20,7 +20,10 @@
 			disabled ? ' disabled' : ''
 		} ${className}`}
 	>
-		<img class="tab-icon" src={icon} alt={title} />
-		<div>{title}</div>
+		<div class="navtab-content">
+			<img class="tab-icon" src={icon} alt={title} />
+			<div>{title}</div>
+		</div>
+		<div class="navtab-bottom-bar"></div>
 	</a>
 </li>

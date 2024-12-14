@@ -11,7 +11,7 @@ nav {
     z-index: 10;
 
     background: $navbar-bg;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 500;
 }
 
@@ -19,6 +19,7 @@ nav {
     display: flex;
     justify-content: right;
     align-items: stretch;
+    padding: 3px 0px;
 }
 
 .nav-edge {
@@ -26,15 +27,12 @@ nav {
 
     &.left {
         justify-content: start;
+        padding-left: 18px;
     }
 
     &.right {
         justify-content: end;
     }
-}
-
-.nav-block {
-    padding: 10px 30px;
 }
 
 .kinda-button {
@@ -46,24 +44,42 @@ nav {
 }
 
 .navtab {
-    $hover-line-width: 2px;
-    gap: 10px;
-    border-top: 0px solid #0000;
-    border-bottom: 0px solid $foreground;
     text-decoration: none;
 
-    transition: ease-out 0.2s;
+    display: flex;
+    flex-direction: column;
+
+    >.navtab-content {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        align-items: center;
+        padding: 8px 24px;
+        gap: 10px;
+    }
+
+    .navtab-bottom-bar {
+        width: 0%;
+        height: 2px;
+        background: $spey-red;
+
+        transition: $smooth-out 0.3s;
+    }
 
     &:hover {
-        border-top: $hover-line-width solid #0000;
-        border-bottom: $hover-line-width solid $foreground;
+        color: $spey-red;
+
+        .navtab-bottom-bar {
+            width: 100%;
+        }
     }
 
     &[aria-current='true'] {
         color: $spey-red;
 
-        border-top: $hover-line-width solid #0000;
-        border-bottom: $hover-line-width solid $spey-red;
+        .navtab-bottom-bar {
+            width: 100%;
+        }
     }
 }
 
@@ -89,8 +105,8 @@ nav {
     display: block;
     background-color: #fff;
     position: absolute;
-    height: 3px;
-    width: 24px;
+    height: 2px;
+    width: 20px;
     transition: 400ms $smooth-out;
     border-radius: 2px;
 }
@@ -98,12 +114,12 @@ nav {
 .menu-button {
     &::before {
         content: '';
-        margin-top: -8px;
+        margin-top: -6px;
     }
 
     &::after {
         content: '';
-        margin-top: 8px;
+        margin-top: 6px;
     }
 }
 
@@ -149,7 +165,7 @@ nav {
 
     .menu {
         position: absolute;
-        margin-top: 50px;
+        margin-top: 34px;
         top: 0;
         left: 0;
         width: 100%;
