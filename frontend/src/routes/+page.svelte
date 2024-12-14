@@ -6,12 +6,7 @@
 	import roundChevronLeft from '$lib/assets/svgs/round-chevron-left.svg';
 	import roundChevronRight from '$lib/assets/svgs/round-chevron-right.svg';
 
-	import logoBluesky from '$lib/assets/svgs/logo-bluesky.svg';
-	import logoDiscord from '$lib/assets/svgs/logo-discord.svg';
 	import logoGithub from '$lib/assets/svgs/logo-github.svg';
-	import logoMastodon from '$lib/assets/svgs/logo-mastodon.svg';
-	import logoReddit from '$lib/assets/svgs/logo-reddit.svg';
-	import logoTwitch from '$lib/assets/svgs/logo-twitch.svg';
 	import logoTwitter from '$lib/assets/svgs/logo-twitter.svg';
 	import logoYoutube from '$lib/assets/svgs/logo-youtube.svg';
 	import logoOsu from '$lib/assets/svgs/logo-osu.svg';
@@ -136,33 +131,13 @@
 			<img src={logoGithub} alt="Github" />
 			<div class="tooltip">Github</div>
 		</a>
-		<a class="spey-social" href="https://discord.com/users/358960666238910465">
-			<img src={logoDiscord} alt="Discord" />
-			<div class="tooltip">Discord</div>
-		</a>
 		<a class="spey-social" href="https://youtube.com/@Speykious">
 			<img src={logoYoutube} alt="YouTube" />
 			<div class="tooltip">YouTube</div>
 		</a>
-		<a class="spey-social" href="https://twitch.tv/Speykious">
-			<img src={logoTwitch} alt="Twitch" />
-			<div class="tooltip">Twitch</div>
-		</a>
 		<a class="spey-social" href="https://x.com/speykious">
 			<img src={logoTwitter} alt="Twitter" />
 			<div class="tooltip">Twitter</div>
-		</a>
-		<a class="spey-social" href="https://bsky.app/profile/speykious.dev">
-			<img src={logoBluesky} alt="Bluesky" />
-			<div class="tooltip">Bluesky</div>
-		</a>
-		<a class="spey-social" href="https://vt.social/@speykious">
-			<img src={logoMastodon} alt="Mastodon (vt.social)" />
-			<div class="tooltip">Mastodon (vt.social)</div>
-		</a>
-		<a class="spey-social" href="https://reddit.com/u/Speykious">
-			<img src={logoReddit} alt="Reddit" />
-			<div class="tooltip">Reddit</div>
 		</a>
 		<a class="spey-social" href="https://osu.ppy.sh/users/19553508">
 			<img src={logoOsu} alt="osu!" />
