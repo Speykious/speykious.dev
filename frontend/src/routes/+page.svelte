@@ -92,10 +92,12 @@
 		let frame: number;
 
 		function updateOnFrame() {
-			speyAge.innerText = speyDecimalAge().toLocaleString('en-US', {
-				maximumFractionDigits: 7,
-				minimumFractionDigits: 7
-			});
+			if (speyAge) {
+				speyAge.innerText = speyDecimalAge().toLocaleString('en-US', {
+					maximumFractionDigits: 7,
+					minimumFractionDigits: 7
+				});
+			}
 
 			requestAnimationFrame(updateOnFrame);
 		}
