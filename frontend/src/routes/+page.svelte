@@ -30,8 +30,8 @@
 		const parallaxX = clamp(pageX / pageWidth, 0, 1);
 		const parallaxY = clamp(pageY / pageHeight, 0, 1);
 
-		speySetup.style.top = `${-10 * (1 - parallaxY)}%`;
-		speySetup.style.left = `${-10 * (1 - parallaxX)}%`;
+		speySetup.style.top = `${-2 * (1 - parallaxY)}%`;
+		speySetup.style.left = `${-2 * (1 - parallaxX)}%`;
 	}
 
 	function onMouseMove(e: MouseEvent) {
@@ -195,16 +195,18 @@
 
 	#spey-setup-bg {
 		position: fixed;
-		top: -5%;
-		left: -5%;
-		width: 110%;
-		height: 110%;
+		top: -2%;
+		left: -2%;
+		width: 104%;
+		height: 104%;
 		z-index: 0;
 
 		background-image: url('https://fs.speykious.dev/spey-coe-setup-2024-hwysi.jpg');
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
+
+		transition: cubic-bezier(0.23, 1, 0.32, 1) 1s;
 
 		filter: blur(10px) brightness(50%);
 	}
