@@ -2,8 +2,8 @@
 	let className: string = '';
 	export { className as class };
 
-	let hrefPath: string;
-	export { hrefPath as href };
+	export let href: string;
+	$: active = href === $page.url.pathname;
 
 	export let icon: string;
 	export let title: string;
@@ -14,11 +14,10 @@
 
 <li>
 	<a
-		href={hrefPath}
-		aria-current={!disabled && $page.url.pathname === hrefPath}
-		class={`navtab kinda-button centered-content nav-block${
-			disabled ? ' disabled' : ''
-		} ${className}`}
+		{href}
+		aria-current={!disabled && active}
+		class:disabled
+		class={`navtab kinda-button centered-content nav-block ${className}`}
 	>
 		<div class="navtab-content">
 			<img class="tab-icon" src={icon} alt={title} />

@@ -28,7 +28,7 @@
 	<Navbar bind:menuChecked={menuChecked}>
 		<NavTab href="/" icon={iconHome} title="Home" />
 		<NavTab href="/" icon={iconCodeBlocks} title="Projects" disabled />
-		<NavTab href="/anime" icon={iconStar} title="Anime" />
+		<NavTab href="/anime/" icon={iconStar} title="Anime" />
 		<NavTab href="/" icon={iconArticle} title="Blog" disabled />
 	</Navbar>
 
