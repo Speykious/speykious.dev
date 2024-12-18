@@ -6,10 +6,11 @@
 	import roundChevronLeft from '$lib/assets/svgs/round-chevron-left.svg';
 	import roundChevronRight from '$lib/assets/svgs/round-chevron-right.svg';
 
+	import logoAnilist from '$lib/assets/svgs/logo-anilist.svg';
 	import logoGithub from '$lib/assets/svgs/logo-github.svg';
+	import logoOsu from '$lib/assets/svgs/logo-osu.svg';
 	import logoTwitter from '$lib/assets/svgs/logo-twitter.svg';
 	import logoYoutube from '$lib/assets/svgs/logo-youtube.svg';
-	import logoOsu from '$lib/assets/svgs/logo-osu.svg';
 
 	import archBtw from '$lib/assets/svgs/icon-arch.svg';
 	import { onMount } from 'svelte';
@@ -127,19 +128,24 @@
 		year old software developer, huge weeb and rhythm games enthusiast.
 	</div>
 	<div class="spey-socials-bar centered-content">
-		<a class="spey-social" href="https://github.com/Speykious">
+		<a class="spey-social github" href="https://github.com/Speykious">
 			<img src={logoGithub} alt="Github" />
 			<div class="tooltip">Github</div>
 		</a>
-		<a class="spey-social" href="https://youtube.com/@Speykious">
+		<a class="spey-social youtube" href="https://youtube.com/@Speykious">
 			<img src={logoYoutube} alt="YouTube" />
 			<div class="tooltip">YouTube</div>
 		</a>
-		<a class="spey-social" href="https://x.com/speykious">
+		<a class="spey-social twitter" href="https://x.com/speykious">
 			<img src={logoTwitter} alt="Twitter" />
 			<div class="tooltip">Twitter</div>
 		</a>
-		<a class="spey-social" href="https://osu.ppy.sh/users/19553508">
+		<div class="spey-socials-sep"></div>
+		<a class="spey-social anilist" href="https://anilist.co/user/Speykious">
+			<img src={logoAnilist} alt="Anilist" />
+			<div class="tooltip">Anilist</div>
+		</a>
+		<a class="spey-social osu" href="https://osu.ppy.sh/users/19553508">
 			<img src={logoOsu} alt="osu!" />
 			<div class="tooltip">osu!</div>
 		</a>

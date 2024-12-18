@@ -99,6 +99,14 @@ a {
     gap: 10px;
 }
 
+.spey-socials-sep {
+    width: 4px;
+    height: 1.5rem;
+
+    background: #fff8;
+    border-radius: 4px;
+}
+
 .spey-social {
     display: flex;
     flex-direction: column;
@@ -106,7 +114,7 @@ a {
 
     background: #fff3;
     padding: 10px;
-    border-radius: 999px;
+    border-radius: 100%;
 
     position: relative;
     font-size: 0.8rem;
@@ -117,7 +125,25 @@ a {
     }
 
     &:hover {
-        background-color: rgba($spey-red, 0.727);
+        &.github {
+            background-color: rgba(#000000, 0.727);
+        }
+
+        &.youtube {
+            background-color: rgba(#ff0000, 0.727);
+        }
+
+        &.twitter {
+            background-color: rgba(#1d9bf0, 0.727);
+        }
+
+        &.anilist {
+            background-color: rgba(#1e2630, 0.727);
+        }
+
+        &.osu {
+            background-color: rgba(#ff66aa, 0.727);
+        }
 
         .tooltip {
             visibility: visible;
