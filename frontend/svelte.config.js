@@ -6,6 +6,9 @@ const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: vitePreprocess(),
+	version: {
+		pollInterval: 5000
+	},
 
 	kit: {
 		adapter: adapter({ out: 'build' }),
