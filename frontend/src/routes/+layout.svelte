@@ -24,6 +24,10 @@
 	}
 </script>
 
+<svelte:head>
+	<meta property="og:url" content={`https://speykious.dev${$page.url.pathname}`} />
+</svelte:head>
+
 <main class="main-layout">
 	<Navbar bind:menuChecked={menuChecked}>
 		<NavTab href="/" icon={iconHome} title="Home" />

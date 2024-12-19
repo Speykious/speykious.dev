@@ -108,6 +108,21 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Speykious's website :3</title>
+
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="speykious.dev" />
+	<meta property="og:description" content="Behold, my personal website :3" />
+	<meta
+		property="og:image"
+		content="https://fs.speykious.dev/spey-coe-setup-2024-hwysi-bannercrop.jpg"
+	/>
+	<meta property="og:image:alt" content="My gamer setup at Cavoe's osu! Event 2024." />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="theme-color" content="#FF4B77" data-react-helmet="true" />
+</svelte:head>
+
 <svelte:window
 	on:mousemove={onMouseMove}
 	on:touchmove={onTouchMove}

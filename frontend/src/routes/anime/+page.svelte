@@ -6,6 +6,17 @@
 	let selectedAnime: string;
 </script>
 
+<svelte:head>
+	<title>Speykious | My Personal anime 3x3</title>
+
+	<meta property="og:title" content="Speykious | My Personal anime 3x3" />
+	<meta property="og:description" content="You can go click on the slots for a lengthy explanation!" />
+	<meta property="og:image" content="https://fs.speykious.dev/spey/spey-anime-3x3.png" />
+	<meta property="og:image:alt" content="My personal anime 3x3" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="theme-color" content="#FF4B77" data-react-helmet="true" />
+</svelte:head>
+
 <div class="center-panel centered-content">
 	<section id="personal-3x3">
 		<h3>My Personal Anime 3x3</h3>
