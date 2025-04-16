@@ -9,7 +9,7 @@
 	import logoAnilist from '$lib/assets/svgs/logo-anilist.svg';
 	import logoGithub from '$lib/assets/svgs/logo-github.svg';
 	import logoOsu from '$lib/assets/svgs/logo-osu.svg';
-	import logoTwitter from '$lib/assets/svgs/logo-twitter.svg';
+	import logoBluesky from '$lib/assets/svgs/logo-bluesky.svg';
 	import logoYoutube from '$lib/assets/svgs/logo-youtube.svg';
 
 	import archBtw from '$lib/assets/svgs/icon-arch.svg';
@@ -153,9 +153,9 @@
 			<img src={logoYoutube} alt="YouTube" />
 			<div class="tooltip">YouTube</div>
 		</a>
-		<a class="spey-social twitter" href="https://x.com/speykious">
-			<img src={logoTwitter} alt="Twitter" />
-			<div class="tooltip">Twitter</div>
+		<a class="spey-social bluesky" href="https://bsky.app/profile/speykious.dev">
+			<img src={logoBluesky} alt="Bluesky" />
+			<div class="tooltip">Bluesky</div>
 		</a>
 		<div class="spey-socials-sep"></div>
 		<a class="spey-social anilist" href="https://anilist.co/user/Speykious">
