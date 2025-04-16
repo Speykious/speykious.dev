@@ -99,7 +99,7 @@
 				});
 			}
 
-			requestAnimationFrame(updateOnFrame);
+			frame = requestAnimationFrame(updateOnFrame);
 		}
 
 		updateOnFrame();
