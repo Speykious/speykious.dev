@@ -145,24 +145,24 @@
 		year old software developer, huge weeb and rhythm games enthusiast.
 	</div>
 	<div class="spey-socials-bar centered-content">
-		<a class="spey-social github" href="https://github.com/Speykious">
+		<a class="spey-social github" rel="me" href="https://github.com/Speykious">
 			<img src={logoGithub} alt="Github" />
 			<div class="tooltip">Github</div>
 		</a>
-		<a class="spey-social youtube" href="https://youtube.com/@Speykious">
+		<a class="spey-social youtube" rel="me" href="https://youtube.com/@Speykious">
 			<img src={logoYoutube} alt="YouTube" />
 			<div class="tooltip">YouTube</div>
 		</a>
-		<a class="spey-social bluesky" href="https://bsky.app/profile/speykious.dev">
+		<a class="spey-social bluesky" rel="me" href="https://bsky.app/profile/speykious.dev">
 			<img src={logoBluesky} alt="Bluesky" />
 			<div class="tooltip">Bluesky</div>
 		</a>
 		<div class="spey-socials-sep"></div>
-		<a class="spey-social anilist" href="https://anilist.co/user/Speykious">
+		<a class="spey-social anilist" rel="me" href="https://anilist.co/user/Speykious">
 			<img src={logoAnilist} alt="Anilist" />
 			<div class="tooltip">Anilist</div>
 		</a>
-		<a class="spey-social osu" href="https://osu.ppy.sh/users/19553508">
+		<a class="spey-social osu" rel="me" href="https://osu.ppy.sh/users/19553508">
 			<img src={logoOsu} alt="osu!" />
 			<div class="tooltip">osu!</div>
 		</a>
