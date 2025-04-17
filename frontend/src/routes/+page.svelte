@@ -6,11 +6,12 @@
 	import roundChevronLeft from '$lib/assets/svgs/round-chevron-left.svg';
 	import roundChevronRight from '$lib/assets/svgs/round-chevron-right.svg';
 
-	import logoAnilist from '$lib/assets/svgs/logo-anilist.svg';
 	import logoGithub from '$lib/assets/svgs/logo-github.svg';
-	import logoOsu from '$lib/assets/svgs/logo-osu.svg';
-	import logoBluesky from '$lib/assets/svgs/logo-bluesky.svg';
 	import logoYoutube from '$lib/assets/svgs/logo-youtube.svg';
+	import logoBluesky from '$lib/assets/svgs/logo-bluesky.svg';
+	import logoVtsocial from '$lib/assets/svgs/logo-vtsocial.svg';
+	import logoAnilist from '$lib/assets/svgs/logo-anilist.svg';
+	import logoOsu from '$lib/assets/svgs/logo-osu.svg';
 
 	import archBtw from '$lib/assets/svgs/icon-arch.svg';
 	import { onMount } from 'svelte';
@@ -156,6 +157,10 @@
 		<a class="spey-social bluesky" rel="me" href="https://bsky.app/profile/speykious.dev">
 			<img src={logoBluesky} alt="Bluesky" />
 			<div class="tooltip">Bluesky</div>
+		</a>
+		<a class="spey-social vtsocial" rel="me" href="https://vt.social/@Speykious">
+			<img src={logoVtsocial} alt="vt.social" />
+			<div class="tooltip">vt.social <small>(Mastodon)</small></div>
 		</a>
 		<div class="spey-socials-sep"></div>
 		<a class="spey-social anilist" rel="me" href="https://anilist.co/user/Speykious">

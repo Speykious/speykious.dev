@@ -141,6 +141,10 @@ a {
             background-color: rgba(#1084fe, 0.727);
         }
 
+        &.vtsocial {
+            background-color: rgba(#ff95be, 0.727);
+        }
+
         &.anilist {
             background-color: rgba(#1e2630, 0.727);
         }
@@ -153,6 +157,10 @@ a {
             visibility: visible;
             opacity: 100%;
             top: 120%;
+
+            small {
+                opacity: 69%;
+            }
         }
     }
 }
