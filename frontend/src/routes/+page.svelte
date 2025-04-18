@@ -20,6 +20,7 @@
 
 	let pageWidth: number;
 	let pageHeight: number;
+	let animationFrameHandle: number;
 
 	// parallax
 
@@ -36,7 +37,10 @@
 	}
 
 	function onMouseMove(e: MouseEvent) {
-		updateParallax(e.pageX, e.pageY);
+		// Throttling the event handler because otherwise it can't
+		// handle updating the parallax every frame for some reason >:(
+		if (animationFrameHandle) cancelAnimationFrame(animationFrameHandle);
+		animationFrameHandle = requestAnimationFrame(() => updateParallax(e.pageX, e.pageY));
 	}
 
 	function onTouchMove(e: TouchEvent) {
